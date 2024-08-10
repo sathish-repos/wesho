@@ -5,6 +5,7 @@
 
 import express from 'express';
 import * as path from 'path';
+import { router } from './routes/users';
 
 const app = express();
 
@@ -17,6 +18,8 @@ app.get('/', (req, res) => {
 app.get('/api', (req, res) => {
   res.send({ message: 'Welcome to wesho-backend api page!' });
 });
+
+app.use('/api/users', router);
 
 const port = process.env.PORT || 3333;
 const server = app.listen(port, () => {
