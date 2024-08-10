@@ -18,6 +18,12 @@ Run `npx nx serve wesho` to start the development server. Happy coding!
 
 Run `npx nx build wesho` to build the application. The build artifacts are stored in the output directory (e.g. `dist/` or `build/`), ready to be deployed.
 
+## create the application
+
+```
+npx nx generate @nx/angular:application --name=<app-name> --bundler=esbuild --directory=apps/wesho --prefix=we --projectNameAndRootFormat=derived --ssr=true --no-interactive
+```
+
 ## Running tasks
 
 To execute tasks with Nx use the following syntax:
