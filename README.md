@@ -17,7 +17,7 @@ npx nx generate @nx/angular:application --name=<app-name> --bundler=esbuild --di
 ## create the backend application
 
 ```
-npx nx generate @nx/angular:application --name=<app-name> --bundler=esbuild --directory=apps/wesho --prefix=we --projectNameAndRootFormat=derived --ssr=true --no-interactive
+npx nx generate @nx/express:application --name=<app-name> --directory=apps/wesho --projectNameAndRootFormat=derived --no-interactive
 ```
 
 ## Running tasks
