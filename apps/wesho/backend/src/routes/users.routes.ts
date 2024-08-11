@@ -1,7 +1,7 @@
 import express from 'express';
 import uuid from 'uuid';
 
-export const router = express.Router();
+export const usersRouter = express.Router();
 
 const users = [
   { id: 1, name: 'sathish' },
@@ -11,10 +11,10 @@ const users = [
 ];
 
 // GET users
-router.get('/', (req, res) => res.json(users));
+usersRouter.get('/', (req, res) => res.json(users));
 
 // GET single user
-router.get('/:id', (req, res) => {
+usersRouter.get('/:id', (req, res) => {
   const found = users.some((user) => user.id === parseInt(req.params.id));
   if (found) {
     res.json(users.filter((user) => user.id === parseInt(req.params.id)));
@@ -26,7 +26,7 @@ router.get('/:id', (req, res) => {
 });
 
 // POST user
-router.post('/', (req, res) => {
+usersRouter.post('/', (req, res) => {
   const newUser = {
     id: uuid.v4(),
     name: req.body.name,
@@ -41,7 +41,7 @@ router.post('/', (req, res) => {
 });
 
 // update (PUT) new user
-router.put('/:id', (req, res) => {
+usersRouter.put('/:id', (req, res) => {
   const found = users.some((user) => user.id === parseInt(req.params.id));
   if (found) {
     const updatedUser = req.body;
@@ -60,7 +60,7 @@ router.put('/:id', (req, res) => {
 });
 
 //Delete User
-router.delete('/:id', (req, res) => {
+usersRouter.delete('/:id', (req, res) => {
   const found = users.some((user) => user.id === parseInt(req.params.id));
 
   if (found) {

@@ -5,7 +5,7 @@
 
 import express from 'express';
 import * as path from 'path';
-import { router } from './routes/users';
+import { apiRouter } from './routes/api.routes';
 
 const app = express();
 const PORT = process.env.PORT || 3333;
@@ -13,18 +13,10 @@ const PORT = process.env.PORT || 3333;
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 app.get('/', (req, res) => {
-  res.send({ message: 'Welcome to wesho-backend!' });
+  res.send('<h1> Welcome to wesho-backend! </h1>');
 });
 
-app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to wesho-backend api page!' });
-});
-
-app.get('/api/goals', (req, res) => {
-  res.status(200).json({ message: 'Get goals' });
-});
-
-app.use('/api/users', router);
+app.use('/api', apiRouter);
 
 const server = app.listen(PORT, () =>
   console.log(`Listening at http://localhost:${PORT}`)
