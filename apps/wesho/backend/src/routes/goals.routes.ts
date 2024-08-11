@@ -1,19 +1,18 @@
 import express from 'express';
+import {
+  deleteGoal,
+  getGoals,
+  setGoals,
+  updateGoal,
+} from '../controller/goals.controller';
 
 export const goalsRouter = express.Router();
 
-goalsRouter.get('/', (req, res) => {
-  res.status(200).json({ message: 'Get goals' });
-});
+// it's /api/goals handler
 
-goalsRouter.post('/', (req, res) => {
-  res.status(200).json({ message: 'set goals' });
-});
+// ex for chaining the same routes
+goalsRouter.route('/').get(getGoals).post(setGoals);
 
-goalsRouter.put('/:id', (req, res) => {
-  res.status(200).json({ message: `update goal ${req.params.id}` });
-});
-
-goalsRouter.delete('/:id', (req, res) => {
-  res.status(200).json({ message: `delete goal ${req.params.id}` });
-});
+// ex without chaining the same routes
+goalsRouter.put('/:id', updateGoal);
+goalsRouter.delete('/:id', deleteGoal);
