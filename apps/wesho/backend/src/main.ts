@@ -1,6 +1,7 @@
 import express from 'express';
 import * as path from 'path';
 import { apiRouter } from './routes/api.routes';
+import { errorHandler } from './middleware/error.middleware';
 
 const app = express();
 const PORT = process.env.PORT || 3333;
@@ -19,6 +20,9 @@ app.use('/api', apiRouter);
 app.get('/', (req, res) => {
   res.send('<h1> Welcome to wesho-backend! </h1>');
 });
+
+// custom errorhandler
+app.use(errorHandler);
 
 const server = app.listen(PORT, () =>
   console.log(`Listening at http://localhost:${PORT}`)
