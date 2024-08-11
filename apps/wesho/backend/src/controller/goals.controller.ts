@@ -9,7 +9,7 @@ export const getGoals = (req, res) => {
 // @route POST api/goals
 // @access Private
 export const setGoals = (req, res) => {
-  res.status(200).json({ message: 'set goals' });
+  res.status(200).json({ message: `set goals${req.body.text}` });
 };
 
 // @desc update goal
