@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@wesho/home-smart": ["libs/wesho/home/smart/src/index.ts"],
-      "@wesho/home-ui": ["libs/wesho/home/ui/src/index.ts"]
+      "@wesho/home-ui": ["libs/wesho/home/ui/src/index.ts"],
+      "@wesho/shared-ui": ["libs/shared/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
