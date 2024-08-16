@@ -15,10 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "wesho": ["libs/shared/wesho/src/index.ts"],
       "@wesho/home-smart": ["libs/wesho/home/smart/src/index.ts"],
       "@wesho/home-ui": ["libs/wesho/home/ui/src/index.ts"],
-      "@wesho/shared-ui": ["libs/shared/ui/src/index.ts"]
+      "@wesho/shared-ui": ["libs/shared/ui/src/index.ts"],
+      "wesho": ["libs/shared/wesho/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

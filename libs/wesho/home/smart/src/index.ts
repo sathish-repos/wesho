@@ -1,1 +1,1 @@
-export * from './lib/wesho-home-smart/wesho-home-smart.component';
+export * from './lib/entry-component/home/home.component';
