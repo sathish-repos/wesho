@@ -2,7 +2,7 @@
   "name": "wesho-frontend",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "we",
+  "prefix": "wesho",
   "sourceRoot": "apps/wesho/frontend/src",
   "tags": [],
   "targets": {
