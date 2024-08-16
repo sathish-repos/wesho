@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@wesho/wesho/home/smart": ["libs/wesho/home/smart/src/index.ts"]
+      "@wesho/home-smart": ["libs/wesho/home/smart/src/index.ts"],
+      "@wesho/home-ui": ["libs/wesho/home/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
