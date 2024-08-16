@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { WeshoHomeUiComponent } from './wesho-home-ui.component';
+import { HomePageComponent } from './home-page.component';
 
-describe('WeshoHomeUiComponent', () => {
-  let component: WeshoHomeUiComponent;
-  let fixture: ComponentFixture<WeshoHomeUiComponent>;
+describe('HomePageComponent', () => {
+  let component: HomePageComponent;
+  let fixture: ComponentFixture<HomePageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [WeshoHomeUiComponent],
+      imports: [HomePageComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(WeshoHomeUiComponent);
+    fixture = TestBed.createComponent(HomePageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

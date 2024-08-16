@@ -1,1 +1,1 @@
-export * from './lib/wesho-home-ui/wesho-home-ui.component';
+export * from './lib/pages/home-page/home-page.component';
