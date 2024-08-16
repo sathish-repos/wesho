@@ -1,0 +1,10 @@
+.page-not-found {
+  height: calc(100vh - 50px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 992px) {
+    height: calc(100vh - 52px);
+  }
+}
