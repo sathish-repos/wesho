@@ -1,28 +1,30 @@
-/**
- * This is not a production server yet!
- * This is only a minimal backend to get started.
- */
-
 import express from 'express';
 import * as path from 'path';
-import { router } from './routes/users';
+import { apiRouter } from './routes/api.routes';
+import { errorHandler } from './middleware/error.middleware';
 
 const app = express();
+const PORT = process.env.PORT || 3333;
 
+// assets static hosting
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
+// used for sending data from client through body
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+// all api routes goes through /api
+app.use('/api', apiRouter);
+
+// homepage for backend
 app.get('/', (req, res) => {
-  res.send({ message: 'Welcome to wesho-backend!' });
+  res.send('<h1> Welcome to wesho-backend! </h1>');
 });
 
-app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to wesho-backend api page!' });
-});
+// custom errorhandler
+app.use(errorHandler);
 
-app.use('/api/users', router);
-
-const port = process.env.PORT || 3333;
-const server = app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}`);
-});
+const server = app.listen(PORT, () =>
+  console.log(`Listening at http://localhost:${PORT}`)
+);
 server.on('error', console.error);
